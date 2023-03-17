@@ -284,7 +284,6 @@ function! s:unload_session(bang)
     let last_buf = bufnr('$')
 
     for b in getbufinfo()
-        let g:last = b
         let bufnr = b['bufnr']
         let buf_name = b['name']
         let is_listed = b['name']
