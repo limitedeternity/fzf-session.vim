@@ -4,10 +4,10 @@ Simple session loader that works with fzf. Sessions are stored in ~/.vim/session
 
 Commands:
 
-    :SessionLoad
-        interactively load a session
-    :SessionUnload
-        finish the session and unload all saved files
+    :Sessions
+        interactively view and manage sessions
+    :UnloadSession
+        finish the session and unload all buffers
 
 - Enter on [New session] creates a new session
 - Enter selects an existing session. This unloads all buffers of the current session and loads the new one
@@ -22,7 +22,7 @@ If you want to run this in your vimrc on startup you need some slight trickery:
          au VimEnter * SessionLoad
         endif
     endif
-    let g:first_load = v:false
+    let g:first_load = 0
 
 
 ## Installation:
@@ -40,4 +40,4 @@ The plugin works perfectly fine without vim-obsession but you won't automaticall
 
 By default, fzf-session rewrites the session files to skip terminal buffers. If they are wanted, use:
 
-    let g:session#unload_old_sessions = v:false
+    let g:session#unload_old_sessions = 0
